@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ChatClient.MainWindow"
+        Title="OSchat"
+        Width="430"
+        Height="450"
+        CanResize="False">
+  <StackPanel>
+    <Grid Margin="10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+      <TextBox x:Name="UserNameBox" Watermark="Введите имя" Height="40" Grid.Column="0" VerticalContentAlignment="Center"/>
+      <Button x:Name="ConnectButton" Content="Войти" Click="OnConnectButtonClicked" Height="40" Width="100" Grid.Column="1" Margin="10,0,0,0"
+              HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+    </Grid>
+
+    <ScrollViewer Height="300" Margin="10">
+      <TextBox x:Name="ChatBox" IsReadOnly="True"/>
+    </ScrollViewer>
+
+    <Grid Margin="10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+      <TextBox x:Name="MessageBox" Watermark="Введите сообщение" Height="40" IsEnabled="False" Grid.Column="0" 
+              VerticalContentAlignment="Center"/>
+      <Button x:Name="SendButton" Content="Отправить" Click="OnSendButtonClicked" Height="40" Width="100" IsEnabled="False" Grid.Column="1" Margin="10,0,0,0"
+              HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+      <Button x:Name="SendFileButton" Content="Выбрать файл" Click="OnSendFileButtonClicked" Height="40" Width="120" IsEnabled="False" Grid.Column="2" Margin="10,0,0,0"
+              HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+    </Grid>
+  </StackPanel>
+</Window>
